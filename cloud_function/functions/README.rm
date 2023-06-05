@@ -1,0 +1,26 @@
+Reqiured:
+ python 3.11 (brew install python)
+
+create venv python3.7 from IDE or CLI
+  `> python3 -m venv venv`
+  `> source venv/bin/activate`
+* install dependency
+  `> pip3 install -r requirements.txt`
+
+firebase emulators:start
+firebase deploy --only functions
+firebase functions:delete myFunction
+
+deploy with region:
+gcloud functions deploy on_request_example \
+    --gen2 \
+    --source .  \
+    --runtime python311 \
+    --region australia-southeast1 \
+    --trigger-http \
+    --allow-unauthenticated
+
+If firebase_admin could not resolve:
+  press f1
+  type 'python select interpreter'
+  select python3.11
